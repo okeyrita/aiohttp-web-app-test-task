@@ -33,13 +33,15 @@ Implement __Aiohttp web app__ with the following conditions:
     * __(POST) /api/news__, add new news by _id_
     * __(DELETE) /api/news/{id}__, delete news by _id_
 
-* All notes stored in `json`
+* All notes stored in `json`.
 
 ## Implementation
 
 * In this nask we have no frontend. And we will return __Json__ responses to our requests.
 
 * In this task we have no database. We use to json files in folder data for storing data.
+
+* We sort news and comments in order from newest to oldest.
 
 * 
 

@@ -39,7 +39,7 @@ Implement __Aiohttp web app__ with the following conditions:
 
 * In this nask we have no frontend. And we will return __Json__ responses to our requests.
 
-* In this task we have no database. We use to json files in folder data for storing data.
+* In this task we have no database. We use json files in folder _data_ for storing data.
 
 * We sort news and comments in order from newest to oldest.
 

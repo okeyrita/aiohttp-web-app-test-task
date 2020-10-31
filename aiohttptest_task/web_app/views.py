@@ -3,7 +3,6 @@ from datetime import datetime
 
 from aiohttp import web
 import copy
-from pytz import timezone
 
 DATA_PATH = 'web_app/data/'
 DATA_NEWS = 'news.json'
@@ -86,7 +85,8 @@ async def get_news_by_id(request):
     else:
         # Add coments to response
         with open(DATA_PATH+DATA_COMMENTS, mode='r') as comments_file:
-            data_comments = copy.deepcopy(json.load(comments_file).get('comments'))
+            data_comments = copy.deepcopy(
+                json.load(comments_file).get('comments'))
         sorted_comments = []
         for comment in data_comments:
             if comment.get('news_id') == news_id:
@@ -133,8 +133,8 @@ async def add_new_news(request):
 
     # Update news
     with open(DATA_PATH+DATA_NEWS, mode='r') as news_file:
-        data = json.load(news_file)
-        data_news = copy.deepcopy(data)
+        data_news = json.load(news_file)
+        data_news = copy.deepcopy(data_news)
         list_news = data_news.get('news')
         list_news.append(data)
 
@@ -173,13 +173,11 @@ async def delete_news_by_id(request):
 
     with open(DATA_PATH+DATA_NEWS) as json_file:
         data_news = copy.deepcopy(json.load(json_file))
-
-        for item in data_news.get('news'):
-            if item.get('id') == news_id:
-                item.update({
-                    'deleted': True
-                })
-                break
+        
+    for item in data_news.get('news'):
+        if int(item.get('id')) == int(news_id):
+            item['deleted']= True
+            break
 
     with open(DATA_PATH+DATA_NEWS, mode='w') as json_file:
         json.dump(data_news, json_file)

@@ -1,1 +1,1 @@
-{"news": [{"id": 1, "title": "news_1", "date": "2019-01-01T20:56:35", "body": "The news", "deleted": false}], "news_count": 1}
+{"news": [{"id": 1, "title": "news_1", "date": "2019-01-01T20:56:35", "body": "The news", "deleted": false}, {"id": 2, "title": "news_2", "body": "The news", "deleted": true, "date": "2020-10-31T18:06:13"}], "news_count": 2}
